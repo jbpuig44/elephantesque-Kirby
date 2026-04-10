@@ -1,3 +1,7 @@
+# Déploie le site Kirby vers l'instance Gandi Simple Hosting via SFTP (lftp mirror -R).
+# Secrets requis : GANDI_SFTP_HOST, GANDI_SFTP_USER, GANDI_SFTP_PASSWORD, GANDI_REMOTE_PATH.
+# Déclenchement : push sur main ou lancement manuel via workflow_dispatch.
+
 name: Deploy to Gandi
 
 on:
