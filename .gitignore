@@ -1,0 +1,32 @@
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dépendances
+/node_modules
+/vendor
+
+# Kirby — caches, sessions, logs, comptes
+/site/accounts
+/site/sessions
+/site/cache
+/site/logs
+
+# Kirby — fichiers générés / médias
+/media
+/thumbs
+
+# Contenu éditorial (géré via Panel Kirby en prod)
+/content
+
+# Environnement
+.env
+.env.*
+!.env.example
+
+# Logs divers
+*.log

@@ -1,0 +1,47 @@
+name: Deploy to Gandi
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP (lftp mirror -R)
+        env:
+          HOST: ${{ secrets.GANDI_SFTP_HOST }}
+          SFTP_USER: ${{ secrets.GANDI_SFTP_USER }}
+          SFTP_PASS: ${{ secrets.GANDI_SFTP_PASSWORD }}
+          REMOTE: ${{ secrets.GANDI_REMOTE_PATH }}
+        run: |
+          lftp -c "
+          set sftp:auto-confirm yes
+          set net:max-retries 2
+          set net:timeout 20
+          open -u \"$SFTP_USER,$SFTP_PASS\" sftp://$HOST
+          mirror -R --verbose --only-newer \
+            --exclude-glob .git/ \
+            --exclude-glob .git* \
+            --exclude-glob .github/ \
+            --exclude-glob README.md \
+            --exclude-glob .editorconfig \
+            --exclude-glob site/accounts/ \
+            --exclude-glob site/sessions/ \
+            --exclude-glob site/cache/ \
+            --exclude-glob site/logs/ \
+            --exclude-glob content/ \
+            --exclude-glob media/ \
+            --exclude-glob thumbs/ \
+            ./ \"$REMOTE\"
+          "
