@@ -13,6 +13,7 @@
 
 html {
   font-family: var(--font);
+  font-weight: 300;
   color: var(--color-black);
   background: var(--color-white);
 }
@@ -176,10 +177,6 @@ h1 {
   aspect-ratio: 4/3;
   object-fit: cover;
   margin-bottom: 0.5rem;
-}
-
-.grid-cards span {
-  font-size: 0.875rem;
 }
 
 .grid-cards a:hover span {
