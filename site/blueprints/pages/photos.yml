@@ -1,0 +1,20 @@
+title: Photos
+icon: 📷
+
+options:
+  changeSlug: false
+  changeStatus: false
+  delete: false
+
+columns:
+  - width: 1/1
+    sections:
+      albums:
+        type: pages
+        label: Albums
+        layout: cards
+        template: album
+        image:
+          ratio: 5/4
+          cover: true
+        sortBy: title asc

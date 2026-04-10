@@ -1,0 +1,7 @@
+title: Accueil
+icon: 🏠
+
+options:
+  changeSlug: false
+  changeStatus: false
+  delete: false

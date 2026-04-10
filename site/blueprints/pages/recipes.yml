@@ -1,0 +1,17 @@
+title: Recettes
+icon: 🍳
+
+options:
+  changeSlug: false
+  changeStatus: false
+  delete: false
+
+columns:
+  - width: 1/1
+    sections:
+      recipes:
+        type: pages
+        label: Recettes
+        layout: list
+        template: recipe
+        sortBy: title asc

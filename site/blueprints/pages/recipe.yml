@@ -1,0 +1,18 @@
+title: Recette
+icon: 🥘
+
+fields:
+  ingredients:
+    label: Ingrédients
+    type: textarea
+    help: Un ingrédient par ligne
+    buttons: false
+    size: medium
+
+  steps:
+    label: Étapes
+    type: textarea
+    help: Une étape par paragraphe
+    buttons:
+      - bold
+    size: large
