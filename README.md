@@ -6,9 +6,10 @@ Ce dépôt est la source de vérité du **code** du site. Le **contenu éditoria
 
 ## Stack
 
-- Kirby CMS (version reprise depuis la prod Gandi)
-- PHP (version alignée sur l'instance Gandi Simple Hosting)
+- Kirby CMS **5.3.2** (basé sur le Starterkit)
+- PHP **8.2 → 8.5** (cf. `composer.json`)
 - Hébergement : Gandi Simple Hosting
+- `kirby/` est vendored à la racine (comportement par défaut du Starterkit, pas de `vendor/`)
 
 ## Arborescence suivie par git
 
