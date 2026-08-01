@@ -20,8 +20,12 @@ Thumbs.db
 /media
 /thumbs
 
-# Contenu éditorial (géré via Panel Kirby en prod)
-/content
+# Contenu éditorial (géré via Panel Kirby en prod) — tout ignoré...
+/content/*
+# ...sauf cette recette, suivie dans git pour être déployée via deploy.yml
+!/content/recettes/
+/content/recettes/*
+!/content/recettes/poulet-croustillant/
 
 # Environnement
 .env
