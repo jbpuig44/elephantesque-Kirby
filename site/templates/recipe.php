@@ -3,7 +3,7 @@
   <article class="recipe">
     <h1><?= $page->title()->esc() ?></h1>
 
-    <?php if ($page->tested()->isFalse()): ?>
+    <?php if ($page->tested()->isNotEmpty() && $page->tested()->isFalse()): ?>
     <p class="recipe-untested">⚠️ Recette non encore testée</p>
     <?php endif ?>
 

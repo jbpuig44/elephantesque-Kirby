@@ -22,10 +22,11 @@ Thumbs.db
 
 # Contenu éditorial (géré via Panel Kirby en prod) — tout ignoré...
 /content/*
-# ...sauf cette recette, suivie dans git pour être déployée via deploy.yml
-!/content/recettes/
-/content/recettes/*
-!/content/recettes/poulet-croustillant/
+# ...sauf des recettes suivies dans git pour être déployées via deploy.yml.
+# La page « recettes » listée est le dossier content/1_recettes/.
+!/content/1_recettes/
+/content/1_recettes/*
+!/content/1_recettes/20_poulet-croustillant/
 
 # Environnement
 .env
