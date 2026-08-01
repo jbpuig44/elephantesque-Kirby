@@ -48,4 +48,9 @@ jobs:
             --exclude-glob media/ \
             --exclude-glob thumbs/ \
             ./ \"$REMOTE\"
+          # Le contenu est exclu du miroir ci-dessus (géré au Panel), à une
+          # exception près : les recettes versionnées dans git sont poussées
+          # ici de façon ciblée, sans toucher au reste du contenu Panel.
+          mirror -R --verbose --only-newer \
+            content/recettes/ \"$REMOTE/content/recettes/\"
           "

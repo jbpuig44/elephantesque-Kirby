@@ -2,6 +2,36 @@ title: Recette
 icon: 🥘
 
 fields:
+  tested:
+    label: Recette testée ?
+    type: toggle
+    text:
+      - Non testée
+      - Testée
+    default: false
+
+  cover: fields/cover
+
+  intro:
+    label: Introduction
+    type: textarea
+    size: small
+    buttons:
+      - bold
+      - italic
+
+  time:
+    label: Temps total
+    type: text
+    width: 1/2
+    placeholder: "45 minutes"
+
+  servings:
+    label: Portions
+    type: text
+    width: 1/2
+    placeholder: "4 portions"
+
   ingredients:
     label: Ingrédients
     type: textarea
